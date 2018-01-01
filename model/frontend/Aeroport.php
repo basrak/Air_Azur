@@ -6,13 +6,6 @@ class Aeroport
     private $_nomArpt;
     private $_villeArpt;
        
-    //Constructeur
-    public function __construct($nomArpt, $villeArpt)
-    {
-       $this->setNomArpt($nomArpt);
-       $this->setVilleArpt($villeArpt);        
-    }
-    
     //hydratation des données à partir de la base de données
     public function hydrate(array $data)
     {
@@ -39,6 +32,11 @@ class Aeroport
     //Je ne mets pas de setter pour l'ID, car auto_increment dans la bdd
     // Pour l'instant, je n'ai mis aucun test des données insérés dans les setters, mais
     //c'est ici qu'il faudra le faire
+    
+    public function setIdArpt($idArpt)
+    {
+        $this->_idArpt = $idArpt;
+    }
     
     public function setNomArpt($nomArpt)
     {

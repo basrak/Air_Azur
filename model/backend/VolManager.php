@@ -1,4 +1,5 @@
 <?php
+require_once '/BddManager.php';
 
 class VolManager extends BddManager
 {
@@ -36,5 +37,32 @@ class VolManager extends BddManager
     }
     public function delete($vars){
         echo'test';
+    }
+    
+    public function getList()
+    {
+    $statement = $this->_connexion->prepare('SELECT * FROM VolGen vg inner join Vol v on v.idvol = vg.idvol'); 
+    $statement->execute();
+
+    while($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+        $volGen = new VolGen();
+        $volGen->setIdVol($row['IDVOL']);
+        $volGen->setIdArpt($row['IDARPT']);
+        $volGen->setIdArptArrivee($row['idArptArrivee']);
+        $volGen->setCodeVol($row['CODEVOL']);
+        $volGen->setPrixVol($row['PRIXVOL']);
+        $volGen->setPlacesVol($row['PLACESVOL']);
+        $volGen->setJourVol($row['JOURVOL']);
+        $vol = new Vol();
+        $vol->setIdVol($row['IDVOL']);
+        $vol->setDateDepart($row['dateDepart']);
+        $vol->setDateArrivee($row['dateArrivee']);
+        $vol->setvolGen($volGen);
+        $vols[] = $vol;
+    }
+     $row->closeCursor();
+    
+    return $vols;
     }
 }

@@ -10,19 +10,6 @@ class Client
     private $_villeClient;
     private $_telClient;
     private $_mailClient;
-       
-    //Constructeur
-    public function __construct($nomClient, $prenomClient, $adrClient, $CPClient, $villeClient, $telClient, $mailClient)
-    {
-       $this->setNomClient($nomClient);
-       $this->setprenomClient($prenomClient);
-       $this->setadrClient($adrClient);
-       $this->setCPClient($CPClient);
-       $this->setVilleClient($villeClient);
-       $this->setTelClient($telClient);
-       $this->setMailClient($mailClient);
-        
-    }
     
     //hydratation des données à partir de la base de données
     public function hydrate(array $data)
@@ -55,6 +42,11 @@ class Client
     //Je ne mets pas de setter pour l'ID, car auto_increment dans la bdd
     // Pour l'instant, je n'ai mis aucun test des données insérés dans les setters, mais
     //c'est ici qu'il faudra le faire
+    
+    public function setIdClient($idClient)
+    {
+        $this->_idClient = $idClient;
+    }
     
     public function setNomClient($nomClient)
     {

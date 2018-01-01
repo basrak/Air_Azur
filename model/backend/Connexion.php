@@ -5,7 +5,7 @@ class Connexion extends PDO {
     private static $_instance;
 
     // Constructeur
-    private function __construct( ) {}
+    public function __construct( ) {}
 
     // Singleton 
     public static function getInstance() {

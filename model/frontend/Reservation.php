@@ -9,16 +9,6 @@ class Reservation
     private $_agenceReserv;
     private $_volReserv;
     private $_clientReserv;
-       
-    //Constructeur
-    public function __construct($dateReserv, $nbrReserv, $agenceReserv, $volReserv, $clientReserv)
-    {
-       $this->setDateR($dateReserv);
-       $this->setNbrR($nbrReserv);
-       $this->setAgenceR($agenceReserv);
-       $this->setVolR($volReserv);
-       $this->setClientR($clientReserv);        
-    }
     
     //hydratation des données à partir de la base de données
     public function hydrate(array $data)
@@ -50,6 +40,11 @@ class Reservation
     //Je ne mets pas de setter pour l'ID, car auto_increment dans la bdd
     // Pour l'instant, je n'ai mis aucun test des données insérés dans les setters, mais
     //c'est ici qu'il faudra le faire
+    
+     public function setIdReserv($idReserv)
+    {
+        $this->_idReserv = $idReserv;
+    }
     
     public function setDateReserv($dateReserv)
     {

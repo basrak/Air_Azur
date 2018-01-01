@@ -734,37 +734,37 @@ footer .social-footer li:hover a {
 	box-shadow: 0;
 }
 
-.form-control.form-white {
-	color: #fff;
-	border: 2px solid white;
+.form-control.form-blue {
+	color: #252d44;
+	border: 2px solid black;
 	background: transparent;
 	-webkit-transition: background-color 0.3s;
 	transition: background-color 0.3s;
 }
 
-.form-control.form-white::-webkit-input-placeholder {
+.form-control.form-blue::-webkit-input-placeholder {
 	/* WebKit browsers */
-	color: #fff;
+	color: #252d44;
 }
 
-.form-control.form-white:-moz-placeholder {
+.form-control.form-blue:-moz-placeholder {
 	opacity: 1;
 	/* Mozilla Firefox 4 to 18 */
-	color: #fff;
+	color: #252d44;
 }
 
-.form-control.form-white::-moz-placeholder {
+.form-control.form-blue::-moz-placeholder {
 	opacity: 1;
 	/* Mozilla Firefox 19+ */
-	color: #fff;
+	color: #252d44;
 }
 
-.form-control.form-white:-ms-input-placeholder {
+.form-control.form-blue:-ms-input-placeholder {
 	/* Internet Explorer 10+ */
-	color: #fff;
+	color: #252d44;
 }
 
-.form-control.form-white:focus {
+.form-control.form-blue:focus {
 	background: rgba(255,255,255,0.2);
 }
 

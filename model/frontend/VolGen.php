@@ -9,18 +9,7 @@ class VolGen
     private $_placesVol;
     private $_prixVol;
     private $_jourVol;
-    
-    //Constructeur
-    public function __construct($codeVol, $idArpt, $idArptArrivee, $placesVol, $prixVol, $jourVol)
-    {
-       $this->setCodeVol($codeVol);
-       $this->setIdArpt($idArpt);
-       $this->setIdArptArrivee($idArptArrivee);
-       $this->setPlacesVol($placesVol);
-       $this->setPrixVol($prixVol);
-       $this->setJourVol($jourVol);
-        
-    }
+      
     
     //hydratation des données à partir de la base de données
     public function hydrate(array $data)
@@ -46,12 +35,18 @@ class VolGen
     public function getPlacesVol()  { return $this->_placesVol; }
     public function getPrixVol()  { return $this->_prixVol; }
     public function getJourVol()  { return $this->_jourVol; }
+    public function getArrayVol()  { return $this->_arrayVol; }
     
     //Setters
     
     //Je ne mets pas de setter pour l'ID, car auto_increment dans la bdd
     // Pour l'instant, je n'ai mis aucun test des données insérés dans les setters, mais
     //c'est ici qu'il faudra le faire
+    
+    public function setIdVol($idVol)
+    {
+        $this->_idVol = $idVol;
+    }
     
     public function setCodeVol($codeVol)
     {

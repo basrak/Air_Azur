@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS USERS
  (
    IDUSERS INTEGER(5) NOT NULL  ,
    LOGIN VARCHAR(15) UNIQUE NOT NULL  ,
-   MDP VARCHAR(20) NOT NULL  
-   , PRIMARY KEY (IDUSERS) 
+   MDP VARCHAR(20) NOT NULL ,
+   uSTATUS VARCHAR(10) NOT NULL,
+   PRIMARY KEY (IDUSERS) 
  )
  ENGINE=INNODB;
 
@@ -23,10 +24,11 @@ CREATE TABLE IF NOT EXISTS USERS
 CREATE TABLE IF NOT EXISTS ADMINISTRATEUR
  (
    IDUSERS INTEGER(5) NOT NULL  ,
-   MAILADMIN VARCHAR(30) UNIQUE NULL  ,
+   MAILADMIN VARCHAR(30) NOT NULL  ,
    LOGIN VARCHAR(15) UNIQUE NOT NULL  ,
-   MDP VARCHAR(20) NOT NULL  
-   , PRIMARY KEY (IDUSERS) 
+   MDP VARCHAR(20) NOT NULL,
+   uSTATUS VARCHAR(10) NOT NULL,
+   PRIMARY KEY (IDUSERS) 
  )ENGINE=INNODB;
 
  # -----------------------------------------------------------------------------
@@ -44,8 +46,9 @@ CREATE TABLE IF NOT EXISTS AGENCE
    TELAGENCE CHAR(15) NULL  ,
    MAILAGENCE VARCHAR(128) NULL  ,
    LOGIN VARCHAR(15) NOT NULL  ,
-   MDP VARCHAR(20) NOT NULL  
-   , PRIMARY KEY (IDUSERS) 
+   MDP VARCHAR(20) NOT NULL ,
+   uSTATUS VARCHAR(10) NOT NULL,
+   PRIMARY KEY (IDUSERS) 
  )ENGINE=INNODB;
  
 # -----------------------------------------------------------------------------
@@ -54,7 +57,7 @@ CREATE TABLE IF NOT EXISTS AGENCE
 
 CREATE TABLE IF NOT EXISTS AEROPORT
  (
-   IDARPT INTEGER(5) NOT NULL  ,
+   IDARPT INTEGER(5) NOT NULL  auto_increment,
    NOMARPT VARCHAR(20) UNIQUE NOT NULL  ,
    VILLEARPT VARCHAR(30) NOT NULL  
    , PRIMARY KEY (IDARPT) 
@@ -82,7 +85,7 @@ CREATE TABLE IF NOT EXISTS VOLGEN
 
 CREATE TABLE IF NOT EXISTS VOL
  (
-   IDVOL INTEGER(5) NOT NULL  ,
+   IDVOL INTEGER(5) NOT NULL  auto_increment,
    DATEDEPART DATETIME NOT NULL  ,
    DATEARRIVEE DATETIME NOT NULL  ,
    PRIMARY KEY (IDVOL,DATEDEPART) 
@@ -94,7 +97,7 @@ CREATE TABLE IF NOT EXISTS VOL
 
 CREATE TABLE IF NOT EXISTS CLIENT
  (
-   IDCLIENT INTEGER(5) NOT NULL  ,
+   IDCLIENT INTEGER(5) NOT NULL  auto_increment,
    NOMCLIENT VARCHAR(30) NOT NULL  ,
    PRENOMCLIENT VARCHAR(30) NOT NULL  ,
    ADRCLIENT VARCHAR(50) NULL  ,
@@ -169,14 +172,39 @@ ALTER TABLE AGENCE
 #       INSERTION DES VALEURS
 # -----------------------------------------------------------------------------
 
-INSERT INTO `users` (`IDUSERS`, `LOGIN`, `MDP`) VALUES
-(1, 'admin', 'admin'),
-(2, 'AZ_ADS', 'agence'),
-(3, 'AZ_AA', 'agence');
+INSERT INTO `users` (`IDUSERS`, `LOGIN`, `MDP`, `uSTATUS`) VALUES
+(1, 'admin1', 'admin', 'admin'),
+(2, 'admin2', 'admin', 'admin'),
+(3, 'AZ_ADS', 'agence', 'agence'),
+(4, 'AZ_AA', 'agence', 'agence');
 
-INSERT INTO `administrateur` (`IDUSERS`, `MAILADMIN`, `LOGIN`, `MDP`) VALUES
-(1, 'admin@gmail.com', 'admin', 'admin');
+INSERT INTO `administrateur` (`IDUSERS`, `MAILADMIN`, `LOGIN`, `MDP`, `uSTATUS`) VALUES
+(1, 'admin@gmail.com', 'admin1', 'admin', 'admin'),
+(2, 'admin@gmail.com', 'admin2', 'admin', 'admin');
 	  
-INSERT INTO `agence` (`IDUSERS`, `CODEAGENCE`, `NOMAGENCE`, `ADRAGENCE`, `CPAGENCE`, `VILLEAGENCE`, `TELAGENCE`, `MAILAGENCE`, `LOGIN`, `MDP`) VALUES
-(2, 'ADS', 'Agence du Soleil', '2 rue de la lune', 75011, 'Paris', '01-02-03-04-05', 'ads@az.com', 'AZ_ADS', 'agence'),
-(3, 'AA', 'Agence anonyme', '10 avenue du pastis', 13000, 'Marseille', '04-01-02-03-04', 'peuchere@yahoo.fr', 'AZ_AA', 'agence');
+INSERT INTO `agence` (`IDUSERS`, `CODEAGENCE`, `NOMAGENCE`, `ADRAGENCE`, `CPAGENCE`, `VILLEAGENCE`, `TELAGENCE`, `MAILAGENCE`, `LOGIN`, `MDP`, `uSTATUS`) VALUES
+(3, 'ADS', 'Agence du Soleil', '2 rue de la lune', 75011, 'Paris', '01-02-03-04-05', 'ads@az.com', 'AZ_ADS', 'agence', 'agence'),
+(4, 'AA', 'Agence anonyme', '10 avenue du pastis', 13000, 'Marseille', '04-01-02-03-04', 'peuchere@yahoo.fr', 'AZ_AA', 'agence', 'agence');
+
+INSERT INTO `aeroport` (`NOMARPT`, `VILLEARPT`) VALUES
+('Alger', 'Algérie'),
+('Amsterdam', 'Pays-Bas'),
+('Athènes', 'Grèce'),
+('Berlin','Allemagne'),
+('Bruxelles','Belgique'),
+('LeCap','Afrique du Sud'),
+('Dakar','Sénégal'),
+('Dublin','Irlande'),
+('Doha','Qatar'),
+('La Havane','Cuba'),
+('Lima','Perou'),
+('Lisbonne','Portugal'),
+('Madrid','Espagne'),
+('Moscou','Russie'),
+('Mexico','Mexique'),
+('Oslo','Norvege'),
+('Paris CDG','France'),
+('Paris Orly','France'),
+('Rabat','Maroc'),
+('Séoul','Corée du Sud'),
+('Tokyo','Japon');

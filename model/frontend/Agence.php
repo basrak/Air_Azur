@@ -10,19 +10,6 @@ class Agence extends Users
     private $_villeAgence;
     private $_telAgence;
     private $_mailAgence;
-       
-    //Constructeur
-    public function __construct($codeAgence, $nomAgence, $adrAgence, $CPAgence, $villeAgence, $telAgence, $mailAgence)
-    {
-       $this->setCodeAgence($codeAgence);
-       $this->setNomAgence($nomAgence);
-       $this->setadrAgence($adrAgence);
-       $this->setCPAgence($CPAgence);
-       $this->setVilleAgence($villeAgence);
-       $this->setTelAgence($telAgence);
-       $this->setMailAgence($mailAgence);
-        
-    }
     
     //hydratation des données à partir de la base de données
     public function hydrate(array $data)
@@ -55,6 +42,11 @@ class Agence extends Users
     //Je ne mets pas de setter pour l'ID, car auto_increment dans la bdd
     // Pour l'instant, je n'ai mis aucun test des données insérés dans les setters, mais
     //c'est ici qu'il faudra le faire
+    
+    public function setIdAgence($idAgence)
+    {
+        $this->_idAgence = $idAgence;
+    }
     
     public function setCodeAgence($codeAgence)
     {

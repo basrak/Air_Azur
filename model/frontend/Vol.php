@@ -5,20 +5,8 @@ class Vol
     private $_idVol;
     private $_dateDepart;
     private $_dateArrivee;
+    private $_volGen;
 
-    //Constructeur
-    public function __construct($nomClient, $prenomClient, $adrClient, $CPClient, $villeClient, $telClient, $mailClient)
-    {
-       $this->setNomClient($nomClient);
-       $this->setprenomClient($prenomClient);
-       $this->setadrClient($adrClient);
-       $this->setCPClient($CPClient);
-       $this->setVilleClient($villeClient);
-       $this->setTelClient($telClient);
-       $this->setMailClient($mailClient);
-        
-    }
-    
     //hydratation des données à partir de la base de données
     public function hydrate(array $data)
     {
@@ -36,14 +24,10 @@ class Vol
     }       
             
     //Getters
-    public function idClient()  { return $this->_idClient; }
-    public function nomClient()  { return $this->_nomClient; }
-    public function prenomClient()  { return $this->_prenomClient; }
-    public function adrClient()  { return $this->_adrClient; }
-    public function CPClient()  { return $this->_CPClient; }
-    public function villeClient()  { return $this->_villeClient; }
-    public function telClient()  { return $this->_telClient; }
-    public function mailClient()  { return $this->_mailClient; }
+    public function getIdVol()  { return $this->_idVol; }
+    public function getDateDepart()  { return $this->_dateDepart; }
+    public function getDateArrivee()  { return $this->_dateArrivee; }
+    public function getVolGen()  { return $this->_volGen; }
     
     //Setters
     
@@ -51,39 +35,25 @@ class Vol
     // Pour l'instant, je n'ai mis aucun test des données insérés dans les setters, mais
     //c'est ici qu'il faudra le faire
     
-    public function setNomClient($nomClient)
+    public function setIdVol($idVol)
     {
-        $this->_nomClient = $nomClient;
+        $this->_idVol = $idVol;
     }
     
-    public function setprenomClient($prenomClient)
+    public function setDateDepart($dateDepart)
     {
-        $this->_prenomClient = $prenomClient;
+        $this->_dateDepart = $dateDepart;
     }
     
-    public function setadrClient($adrClient)
+    public function setDateArrivee($dateArrivee)
     {
-        $this->_adrClient = $adrClient;
+        $this->_dateArrivee = $dateArrivee;
     }
     
-    public function setCPClient($CPClient)
+    public function setvolGen($volGen)
     {
-        $this->_CPClient = $CPClient;
+        $this->_volGen = $volGen;
     }
     
-    public function setVilleClient($villeClient)
-    {
-        $this->_villeClient = $villeClient;
-    }
-    
-    public function setTelClient($telClient)
-    {
-        $this->_telClient = $telClient;
-    }
-    
-    public function setMailClient($mailClient)
-    {
-        $this->_mailClient = $mailClient;
-    }
-    
+   
 }
