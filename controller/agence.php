@@ -1,5 +1,7 @@
 <!-- Routeur Agence -->
-<?php require '/frontendController.php'; ?>
+<?php require './frontendController.php'; 
+
+?>
 
 <?php session_start(); $title = 'Agence ' . $_SESSION['login'] . ' - Air Azur'; ?>
 
@@ -37,4 +39,4 @@ else echo'erreur';
 ?>
 
 <?php
-require(dirname(__DIR__).'./_layout.php');
+require(dirname(__DIR__).'./view/_layout.php');

@@ -9,13 +9,10 @@ function getVols() {
 
     $connexion = Connexion::getInstance();
     $bdd = new VolManager($connexion);
-    $Vols = $bdd->getList();
-    $connexion = NULL;
+    $vols = $bdd->getList();
     
-    if (is_null($Vols)) {
-
+    if (is_null($vols))
         $msgVols = "Erreur, aucun vol dans la base de données";
-    } else {
+    else
         return $vols;
-    }
 }

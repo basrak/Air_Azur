@@ -50,7 +50,7 @@ class Vol
         $this->_dateArrivee = $dateArrivee;
     }
     
-    public function setvolGen($volGen)
+    public function setVolGen($volGen)
     {
         $this->_volGen = $volGen;
     }

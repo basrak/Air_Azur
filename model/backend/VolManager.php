@@ -2,13 +2,7 @@
 require_once '/BddManager.php';
 
 class VolManager extends BddManager
-{
-    
-    public function __construct ($connection)
-    {
-        $this->_connection = $connection;
-    }
-    
+{    
     public function create($vol)
     {
         $prepare = $this->_db->prepare('INSERT INTO Vol(idArpt, idArpt_Arrivee, codeVol, prixVol, placesVol, JourVol) VALUES(:IdArpt, :IdArpt_Arrivee, :codeVol, :prixVol, :placesVol, :JourVol)');
@@ -49,19 +43,19 @@ class VolManager extends BddManager
         $volGen = new VolGen();
         $volGen->setIdVol($row['IDVOL']);
         $volGen->setIdArpt($row['IDARPT']);
-        $volGen->setIdArptArrivee($row['idArptArrivee']);
+        $volGen->setIdArptArrivee($row['IDARPT_ARRIVEE']);
         $volGen->setCodeVol($row['CODEVOL']);
         $volGen->setPrixVol($row['PRIXVOL']);
         $volGen->setPlacesVol($row['PLACESVOL']);
         $volGen->setJourVol($row['JOURVOL']);
         $vol = new Vol();
         $vol->setIdVol($row['IDVOL']);
-        $vol->setDateDepart($row['dateDepart']);
-        $vol->setDateArrivee($row['dateArrivee']);
-        $vol->setvolGen($volGen);
+        $vol->setDateDepart($row['DATEDEPART']);
+        $vol->setDateArrivee($row['DATEARRIVEE']);
+        $vol->setVolGen($volGen);
         $vols[] = $vol;
     }
-     $row->closeCursor();
+    $statement->closeCursor();
     
     return $vols;
     }

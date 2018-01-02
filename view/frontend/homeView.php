@@ -23,5 +23,3 @@
 
 <?php $content2 = ""; ?>
 
-<?php
-require(dirname(__DIR__).'/_layout.php');

@@ -20,8 +20,6 @@ function Connecter($login, $mdp) {
         $_SESSION['login'] = $User->getLogin();
         $_SESSION['uStatus'] = $User->getUStatus();
         $_SESSION['action'] = 'accueil';
-
-        $connexion = null;
         
         if (isset($_SESSION['login'])) {
             if ($_SESSION['uStatus'] == 'admin')

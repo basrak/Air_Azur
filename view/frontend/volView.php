@@ -1,43 +1,35 @@
 
-<?php ob_start(); ?>
+<?php $header = ""; ?>
 
-<div class="container">
-    <div class="table">
-        <div class="header-text">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3 class="light white">C'est les vols></h3>
-                    <h1 class="white typed">Vous êtes connectés au serveur jusqu'à sa fermeture </h1>
-                    <span class="typed-cursor">|</span>
+<?php
+ob_start();
+
+    foreach($vols as $vol): 
+        ?>
+        <div class="cut cut-top"></div>
+        <div class="container">
+            <div class="row intro-tables">			
+                <div class="col-md-12">
+                    <div class="vol">
+                        <div class="row">
+                            <div class="col-md-4"><h4 class="black">Vol : <?php echo $vol->getIdVol(); ?></h4></div>
+                            <div class="col-md-6"><h4 class="black">Depart : <?php echo $vol->getDateDepart(); ?></h4></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><h4 class="black"></h4></div>
+                            <div class="col-md-6"><h4 class="black">Arrivee : <?php echo $vol->getDateArrivee(); ?></h4></div>
+                            <div class="col-md-2"><a href="#" class="btn btn-blue-fill expand">Réserver</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><h4 class="black"></h4></div>
+                            <div class="col-md-3"><h4 class="black">Prix : <?php echo $vol->getVolGen()->getPrixVol(); ?></h4></div>
+                            <div class="col-md-3"><h4 class="black">Places : <?php echo $vol->getVolGen()->getPlacesVol(); ?></h4></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<?php $header = ob_get_clean(); ?>
-
-
-<?php ob_start; if (count($vols) > 0): ?>
-<table>
-  <thead>
-    <tr>
-      <th><?php echo implode('</th><th>', array_keys(current($vols))); ?></th>
-    </tr>
-  </thead>
-  <tbody>
-<?php foreach ($vols as $row): array_map('htmlentities', $row); ?>
-    <tr>
-      <td><?php echo implode('</td><td>', $row); ?></td>
-    </tr>
-<?php endforeach; ?>
-  </tbody>
-</table>
-<?php endif; ?>
-
-
-<?php $content1 = ob_get_clean(); ?>
-
-
-<?php $content2 = ""; ?>
+<?php endforeach; $content1 = ob_get_clean(); ?>
+        
+<?php $content2 = ""; 
 
