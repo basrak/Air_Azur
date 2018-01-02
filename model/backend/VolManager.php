@@ -15,11 +15,10 @@ class VolManager extends BddManager
         $prepare->execute();
     }
     
-    public function upload($XMLfile)
-    {
-        $xml=simplexml_load_file(dirname(__DIR__).$XMLfile) or die("Erreur: Impossibilité de créer l'objet");
-        
-        
+    public function uploadXML($XMLfile)
+    {  
+        $xml=simplexml_load_file($XMLfile);
+        return json_encode($xml);      
     }
     
     public function read($vars){

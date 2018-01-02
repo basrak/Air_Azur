@@ -12,7 +12,7 @@ ob_start();
                 <div class="col-md-12">
                     <div class="vol">
                         <div class="row">
-                            <div class="col-md-4"><h4 class="black">Vol : <?php echo $vol->getIdVol(); ?></h4></div>
+                            <div class="col-md-4"><h4 class="black">Vol : <?php echo $vol->getVolgen()->getCodeVol(); ?></h4></div>
                             <div class="col-md-6"><h4 class="black">Depart : <?php echo $vol->getDateDepart(); ?></h4></div>
                         </div>
                         <div class="row">

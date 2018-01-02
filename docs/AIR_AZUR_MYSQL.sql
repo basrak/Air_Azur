@@ -208,3 +208,9 @@ INSERT INTO `aeroport` (`NOMARPT`, `VILLEARPT`) VALUES
 ('Rabat','Maroc'),
 ('Séoul','Corée du Sud'),
 ('Tokyo','Japon');
+
+INSERT INTO `client`(`NOMCLIENT`, `PRENOMCLIENT`, `ADRCLIENT`, `CPCLIENT`, `VILLECLIENT`, `TELCLIENT`, `MAILCLIENT`) VALUES 
+("Durand", "Alain", "1 rue de l'avenir", "75008", "Paris", "0102030405", "alain.durand@gmail.com"),
+("Dupond", "Jean", "3 rue de l'abreuvoir", "69000", "Lyon", "0102030505", "jean.dupond@hotmail.com"),
+("Poireau", "Robert", "58 boulevard du pré", "33000", "Bordeaux", "0502030405", "rpoireau@gmail.com"),
+("Neymar", "Jean", "5 avenue du petit pont", "78100", "Saint Germain en Laye", "0105304051", "neymar@yahoo.com")
