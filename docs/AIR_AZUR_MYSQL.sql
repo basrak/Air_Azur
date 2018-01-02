@@ -213,4 +213,14 @@ INSERT INTO `client`(`NOMCLIENT`, `PRENOMCLIENT`, `ADRCLIENT`, `CPCLIENT`, `VILL
 ("Durand", "Alain", "1 rue de l'avenir", "75008", "Paris", "0102030405", "alain.durand@gmail.com"),
 ("Dupond", "Jean", "3 rue de l'abreuvoir", "69000", "Lyon", "0102030505", "jean.dupond@hotmail.com"),
 ("Poireau", "Robert", "58 boulevard du pré", "33000", "Bordeaux", "0502030405", "rpoireau@gmail.com"),
-("Neymar", "Jean", "5 avenue du petit pont", "78100", "Saint Germain en Laye", "0105304051", "neymar@yahoo.com")
+("Neymar", "Jean", "5 avenue du petit pont", "78100", "Saint Germain en Laye", "0105304051", "neymar@yahoo.com");
+
+INSERT INTO `volgen` (`IDVOL`, `IDARPT`, `IDARPT_ARRIVEE`, `CODEVOL`, `PRIXVOL`, `PLACESVOL`, `JOURVOL`) VALUES
+(1, 1, 2, 'AIR5001', '600.00', 120, 'lundi'),
+(2, 1, 2, 'AIR5002', '600.00', 120, 'Mardi');
+
+INSERT INTO `vol` (`IDVOL`, `DATEDEPART`, `DATEARRIVEE`) VALUES
+(1, '2018-03-21 17:00:00', '2018-03-21 19:00:00'),
+(1, '2018-04-21 18:00:00', '2018-04-21 19:00:00'),
+(2, '2018-03-21 18:00:00', '2018-03-21 19:00:00'),
+(2, '2018-04-21 18:00:00', '2018-04-21 19:00:00');
