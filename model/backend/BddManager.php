@@ -12,8 +12,6 @@ abstract class BddManager {
 
     public abstract function create($vars);
 
-    public abstract function read($vars);
-
     public abstract function update($vars);
 
     public abstract function delete($vars);

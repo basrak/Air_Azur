@@ -22,6 +22,7 @@ switch($action)
         require '../view/frontend/homeView.php';
         break;
     case 'vol':
+        $arpts = getArpts();
         $vols = getVols();
         require('../view/frontend/volView.php');
         break;

@@ -2,7 +2,7 @@
 
 class Aeroport
 {
-    private $_IdArpt;
+    private $_idArpt;
     private $_nomArpt;
     private $_villeArpt;
        

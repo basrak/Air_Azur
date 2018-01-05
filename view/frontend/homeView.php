@@ -6,7 +6,7 @@
         <div class="header-text">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="light white">Bienvenue Agence <?=$_SESSION['login']?></h1>
+                    <h1 class="light white">Bienvenue Agence <?= htmlspecialchars($_SESSION['login']);?></h1>
                     <h1 class="white typed">Vous resterez connectés au serveur jusqu'à sa fermeture ce soir</h1>
                     <span class="typed-cursor">|</span>
                 </div>

@@ -46,7 +46,7 @@
 	<section>
 		<?=$content1; ?>
 	</section>
-	<section id="services" class="section section-padded">
+        <section>
 		<?=$content2; ?>
 	</section>
 	
@@ -85,13 +85,14 @@
 		<a href="#" class="close-link"><i class="arrow_up"></i></a>
 	</div>
 	<!-- Scripts -->
-	<script src="http://localhost/Eval_PHP_FPS//js/jquery-1.11.1.min.js"></script>
-	<script src="http://localhost/Eval_PHP_FPS//js/owl.carousel.min.js"></script>
-	<script src="http://localhost/Eval_PHP_FPS//js/bootstrap.min.js"></script>
-	<script src="http://localhost/Eval_PHP_FPS//js/wow.min.js"></script>
-	<script src="http://localhost/Eval_PHP_FPS//js/typewriter.js"></script>
-	<script src="http://localhost/Eval_PHP_FPS//js/jquery.onepagenav.js"></script>
-	<script src="http://localhost/Eval_PHP_FPS//js/main.js"></script>
+	<script src="http://localhost/Eval_PHP_FPS/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<script src="http://localhost/Eval_PHP_FPS/js/owl.carousel.min.js" type="text/javascript"></script>
+	<script src="http://localhost/Eval_PHP_FPS/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="http://localhost/Eval_PHP_FPS/js/wow.min.js" type="text/javascript"></script>
+	<script src="http://localhost/Eval_PHP_FPS/js/typewriter.js" type="text/javascript"></script>
+	<script src="http://localhost/Eval_PHP_FPS/js/jquery.onepagenav.js" type="text/javascript"></script>
+	<script src="http://localhost/Eval_PHP_FPS/js/main.js" type="text/javascript"></script>
+        <?=$script ?>
 </body>
 
 </html>
