@@ -9,11 +9,11 @@ require('../model/backend/ArptManager.php');
 
     
 
-function getVols($idArpt) {
+function getVols() {
     
     $connexion = Connexion::getInstance();
     $bdd = new VolManager($connexion);
-    $vols = $bdd->getList($idArpt, null, null, null);
+    $vols = $bdd->getList(null, null, null, null);
     
     if (is_null($vols))
         $msgVols = "Aucun vol n'a été trouvé";
