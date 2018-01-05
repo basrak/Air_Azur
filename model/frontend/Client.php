@@ -28,14 +28,14 @@ class Client
     }       
             
     //Getters
-    public function idClient()  { return $this->_idClient; }
-    public function nomClient()  { return $this->_nomClient; }
-    public function prenomClient()  { return $this->_prenomClient; }
-    public function adrClient()  { return $this->_adrClient; }
-    public function CPClient()  { return $this->_CPClient; }
-    public function villeClient()  { return $this->_villeClient; }
-    public function telClient()  { return $this->_telClient; }
-    public function mailClient()  { return $this->_mailClient; }
+    public function getIdClient()  { return $this->_idClient; }
+    public function getNomClient()  { return $this->_nomClient; }
+    public function getPrenomClient()  { return $this->_prenomClient; }
+    public function getAdrClient()  { return $this->_adrClient; }
+    public function getCPClient()  { return $this->_CPClient; }
+    public function getVilleClient()  { return $this->_villeClient; }
+    public function getTelClient()  { return $this->_telClient; }
+    public function getMailClient()  { return $this->_mailClient; }
     
     //Setters
     

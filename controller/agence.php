@@ -27,11 +27,11 @@ switch($action)
         require('../view/frontend/volView.php');
         break;
     case 'reservation':
-        $reservations = getReservations();
-        require('./view/frontend/reservView.php'); 
+        $reservations = getReservations($_SESSION['idUsers']);
+        require('../view/frontend/reservAllView.php'); 
         break;
     case 'client':
-        require('./view/frontend/clientView.php'); 
+        require('../view/frontend/clientView.php'); 
         break;
 }
 }

@@ -2,13 +2,13 @@
 
 class Reservation
 {
+    private $_idUsers;
     private $_idReserv;
+    private $_idClient;
+    private $_idVol;
+    private $_dateDepart;
     private $_dateReserv;
     private $_nbrReserv;
-    private $_montantReserv;
-    private $_agenceReserv;
-    private $_volReserv;
-    private $_clientReserv;
     
     //hydratation des données à partir de la base de données
     public function hydrate(array $data)
@@ -27,13 +27,13 @@ class Reservation
     }       
             
     //Getters
+    public function getIdUsers()  { return $this->_idUsers; }
     public function getIdReserv()  { return $this->_idReserv; }
+    public function getIdClient()  { return $this->_idClient; }
+    public function getIdVol()  { return $this->_idVol; }
+    public function getDateDepart()  { return $this->_dateDepart; }
     public function getDateReserv()  { return $this->_dateReserv; }
     public function getNbrReserv()  { return $this->_nbrReserv; }
-    public function getMontantReserv()  { return $this->_montantReserv; }
-    public function getAgenceReserv()  { return $this->_agenceReserv; }
-    public function getClientReserv()  { return $this->_clientReserv; }
-    public function getVolReserv()  { return $this->_volReserv; }
 
     //Setters
     
@@ -41,14 +41,29 @@ class Reservation
     // Pour l'instant, je n'ai mis aucun test des données insérés dans les setters, mais
     //c'est ici qu'il faudra le faire
     
-     public function setIdReserv($idReserv)
+     public function setIdUsers($idUsers)
+    {
+        $this->_idUsers = $idUsers;
+    }
+    
+    public function setIdReserv($idReserv)
     {
         $this->_idReserv = $idReserv;
     }
     
-    public function setDateReserv($dateReserv)
+    public function setIdClient($idClient)
     {
-        $this->_dateReserv = $dateReserv;
+        $this->_idClient = $idClient;
+    }
+    
+    public function setIdVol($idVol)
+    {
+        $this->_idVol = $idVol;
+    }    
+    
+    public function setDateDepart($dateDepart)
+    {
+        $this->_dateDepart = $dateDepart;
     }
     
     public function setNbrReserv($nbrReserv)
@@ -56,28 +71,7 @@ class Reservation
         $this->_nbrReserv = $nbrReserv;
     }
     
-    public function setAgenceReserv($agenceReserv)
-    {
-        $this->_agenceReserv = $agenceReserv;
-    }    
-    
-    public function setClientReserv($clientReserv)
-    {
-        $this->_clientReserv = $clientReserv;
-    }
-    
-    public function setVolReserv($volReserv)
-    {
-        $this->_volReserv = $volReserv;
-    }
-    
-    //Methodes
-    public function calculMontant($prix)
-    {
-        $this->_montantReserv = $prix * getNbrReserv();
-        
-        return getMontantReserv();
-    }
+   
     
     
     

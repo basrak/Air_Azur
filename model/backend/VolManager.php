@@ -35,6 +35,27 @@ class VolManager extends BddManager
         echo'test';
     }
       
+    public function getVolGenByID($idVol)
+    {
+    $statement = $this->_connexion->prepare('SELECT * FROM VolGen WHERE idVol = :idVol'); 
+    $statement->execute(array(':idVol' => $idVol));
+
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+    
+        $volGen = new VolGen();
+        $volGen->setIdVol($row['IDVOL']);
+        $volGen->setIdArpt($row['IDARPT']);
+        $volGen->setIdArptArrivee($row['IDARPT_ARRIVEE']);
+        $volGen->setCodeVol($row['CODEVOL']);
+        $volGen->setPrixVol($row['PRIXVOL']);
+        $volGen->setPlacesVol($row['PLACESVOL']);
+        $volGen->setJourVol($row['JOURVOL']);
+    
+    $statement->closeCursor();
+    
+    return $volGen;
+    }  
+    
     public function getList($idArpt, $idArptArrivee, $dateDepart, $dateArrivee)
     {
     $req = 'SELECT * FROM VolGen vg INNER JOIN Vol v on v.idvol = vg.idvol WHERE '
