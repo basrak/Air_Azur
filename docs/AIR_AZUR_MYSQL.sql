@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS USERS
  ENGINE=INNODB;
 
 # -----------------------------------------------------------------------------
-#       TABLE : ADMINISTRATEUR
+#       TABLE : ADMINISTRATEURS
 # -----------------------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS ADMINISTRATEUR
