@@ -26,13 +26,13 @@
                 ?>
                 <tr>
                     <td><?php echo $reservation->getIdReserv(); ?></td>
-                    <td><?php echo getClient($reservation->getIdClient())->getNomClient(); ?></td>
-                    <td><?php echo getClient($reservation->getIdClient())->getPrenomClient(); ?></td>
-                    <td><?php echo getVolGen($reservation->getIdVol())->getCodeVol(); ?></td>
+                    <td><?php echo findClient($reservation->getIdClient())->getNomClient(); ?></td>
+                    <td><?php echo findClient($reservation->getIdClient())->getPrenomClient(); ?></td>
+                    <td><?php echo findVolGen($reservation->getIdVol(), "id")->getCodeVol(); ?></td>
                     <td><?php echo $reservation->getDateDepart(); ?></td>
                     <td><?php echo $reservation->getNbrReserv(); ?></td>
-                    <td><?php echo getVolGen($reservation->getIdVol())->getPrixVol() * $reservation->getNbrReserv(); ?></td>
-                    <td><a href="#"</td>
+                    <td><?php echo findVolGen($reservation->getIdVol(), "id")->getPrixVol() * $reservation->getNbrReserv(); ?></td>
+                    <td><a href="reservation.php?id=<?php echo $reservation->getIdReserv(); ?>"><img src="../img/pdf_mini.png"/></a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -1,15 +1,15 @@
 <?php
 
 require('./model/frontend/Users.php');
-require('./model/backend/Connexion.php');
+require('./model/backend/BddConnexion.php');
 require('./model/backend/UsersManager.php');
 
 $msgConnexion = "";
 
 function Connecter($login, $mdp) {
 
-    $connexion = Connexion::getInstance();
-    $bdd = new UsersManager($connexion);
+    $connexion = BddConnexion::getInstance();
+    $bdd = new UsersManager($connexion->handle());
     $User = $bdd->get($login, $mdp);
 
     if (is_null($User)) {
@@ -18,6 +18,7 @@ function Connecter($login, $mdp) {
     } else {
         $_SESSION['idUsers'] = $User->getIdUsers();
         $_SESSION['login'] = $User->getLogin();
+        $_SESSION['nomAgence'] = $User->getLogin();
         $_SESSION['uStatus'] = $User->getUStatus();
         $_SESSION['action'] = 'accueil';
         

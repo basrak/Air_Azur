@@ -22,13 +22,16 @@ switch($action)
         require '../view/frontend/homeView.php';
         break;
     case 'vol':
-        $arpts = getArpts();
-        $vols = getVols();
+        $arpts = findArpts();
+        $vols = findVols();
         require('../view/frontend/volView.php');
         break;
     case 'reservation':
-        $reservations = getReservations($_SESSION['idUsers']);
+        $reservations = findReservations($_SESSION['idUsers']);
         require('../view/frontend/reservAllView.php'); 
+        break;
+    case 'pdf':
+        header('Location: reservation.php$id=');
         break;
     case 'client':
         require('../view/frontend/clientView.php'); 

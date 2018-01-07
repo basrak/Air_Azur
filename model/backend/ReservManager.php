@@ -20,6 +20,22 @@ class ReservManager extends BddManager
         echo'test';
     }
       
+    public function getByID($idReserv)
+    {
+    $statement = $this->_connexion->prepare('SELECT * FROM Reservation WHERE idReserv = :idReserv'); 
+    $statement->execute(array(':idReserv' => $idReserv));
+
+    $data = $statement->fetch(PDO::FETCH_ASSOC);
+    
+        $reserv = new Reservation();
+        $reserv->hydrate($data);
+    
+    $statement->closeCursor();
+    
+    return $reserv;
+    }
+    
+    
     public function getList($idUsers)
     {
     $req = 'SELECT * FROM Reservation WHERE idUsers = :idUsers';

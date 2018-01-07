@@ -22,12 +22,6 @@ class ClientManager extends BddManager
         $prepare->execute();
     }
     
-    public function uploadXML($XMLfile)
-    {  
-        $xml=simplexml_load_file($XMLfile);
-        return json_encode($xml);      
-    }
-    
     public function update($vars){
         echo'test';
     }

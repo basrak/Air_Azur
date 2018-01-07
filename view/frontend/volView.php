@@ -54,11 +54,11 @@ foreach ($vols as $vol):
                         <div class="vol">
                             <div class="row">
                                 <div class="col-md-4"><h4 class="black">Vol : <?php echo $vol->getVolgen()->getCodeVol(); ?></h4></div>
-                                <div class="col-md-6"><h4 class="black">Depart : <?php echo "" . getNomArpt($vol->getVolgen()->getIdArpt()) . " " . $vol->getDateDepart() . ""; ?></h4></div>
+                                <div class="col-md-6"><h4 class="black">Depart : <?php echo "" . findArpt($vol->getVolgen()->getIdArpt(), "id")->getNomArpt() . " " . $vol->getDateDepart() . ""; ?></h4></div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4"><h4 class="black"></h4></div>
-                                <div class="col-md-6"><h4 class="black">Arrivee : <?php echo "" . getNomArpt($vol->getVolgen()->getIdArptArrivee()) . " " . $vol->getDateArrivee() . ""; ?></h4></div>
+                                <div class="col-md-6"><h4 class="black">Arrivee : <?php echo "" . findArpt($vol->getVolgen()->getIdArptArrivee(), "id")->getNomArpt() . " " . $vol->getDateArrivee() . ""; ?></h4></div>
                                 <div class="col-md-2"><a href="#" class="btn btn-blue-fill expand">Réserver</a></div>
                             </div>
                             <div class="row">
