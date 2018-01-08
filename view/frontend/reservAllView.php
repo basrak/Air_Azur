@@ -7,7 +7,7 @@
 <?php ob_start(); ?>
 
 <div class="container">
-    <table> 
+    <table class="salahCss"> 
         <thead>
             <tr>
                 <th>Num</th> 
