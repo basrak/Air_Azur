@@ -174,4 +174,9 @@ function upXML($XMLfile) {
     } catch (PDOException $e) {
         die('Error->upXML() : ' . $e->getMessage());
     }
+    
+    function reserver($idvol) {
+        
+    }
+    
 }
