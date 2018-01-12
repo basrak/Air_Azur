@@ -1,20 +1,16 @@
 $(document).ready(function(){
   
-  $('.modal-link').click(function(){
-        var link = $(this).attr("href");
-        alert(link);
+  $('.reserver').click(function(){
+      alert('test');
+        loadReserver();
+        alert('test');
   });
-
-  $('#sVilleArrivee').on('change', function(){
-        selectVols();
-  });
-
 });
 
-function selectVol(){
-$.get('agence.php', {action:'vol', sVilleDepart: $('#sVilleDepart').val() },
+function loadReserver(){
+$.get('http://localhost/Eval_PHP_FPS/controller/agence.php?action=vol&id=', { id: $(this).data('id') },
     function(data){
-       alert(data);    
+       alert('test');    
            
     });
 }
