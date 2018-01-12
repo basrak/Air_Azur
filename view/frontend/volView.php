@@ -58,7 +58,8 @@
                             <div class="row">
                                 <div class="col-md-4"><h4 class="black"></h4></div>
                                 <div class="col-md-6"><h4 class="black">Arrivee : <?php echo "" . findArpt($vol->getVolgen()->getIdArptArrivee(), "id")->getNomArpt() . " " . $vol->getDateArrivee() . ""; ?></h4></div>
-                                <div class="col-md-2"><a data-toggle="modal" data-target="modalReserver" data-id="<?php $idVol = $vol->getVolGen()->getIdVol() ?>" href="#" class="reserver btn btn-blue-fill expand">Réserver</a></div>
+                                <div class="col-md-2"><a data-toggle="modal" data-target="modalReserver" data-id="<?php echo $vol->getVolGen()->getIdVol(); ?>" href="#" class="reserver btn btn-blue-fill expand">Réserver</a></div>
+                                <!-- <div class="col-md-2"><a data-toggle="modal" data-target="modalReserver" onclick="loadReserver(1)" href="#" class="reserver btn btn-blue-fill expand">Réserver</a></div> -->
                             </div>
                             <div class="row">
                                 <div class="col-md-4"><h4 class="black"></h4></div>
@@ -81,12 +82,11 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <h3 class="white">Reserver un vol</h3>
+            <input type="hidden" name="hiddenIdVol" id="hiddenIdVol" value="" />
+            <h3 class="white">Reserver pour le vol </h3>
             <form action="" class="popup-form">
                 <div class="container">
                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-
-
                         <div class="row">
                             <div class="form-group col-md-6 col-sm-6 col-xs-6 col-lg-6">
                                 <label class="control-label">Client</label>
@@ -222,7 +222,7 @@
 
 
 
-<script src="http://localhost/Eval_PHP_FPS/js/searchVol.js" type="text/javascript"></script>
+<script src="http://localhost/Eval_PHP_FPS/js/reserver.js" type="text/javascript"></script>
 
 <?php $script = ob_get_clean(); ?>
         
